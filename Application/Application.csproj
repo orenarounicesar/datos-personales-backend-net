@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="UseCases\PersonalInformations\Commands\CreatePersonalInformation\" />
-    <Folder Include="UseCases\PersonalInformations\Commands\DeletePersonalInformation\" />
     <Folder Include="UseCases\PersonalInformations\Dto\" />
     <Folder Include="UseCases\PersonalInformations\Queries\" />
   </ItemGroup>

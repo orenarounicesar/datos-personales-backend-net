@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\caden\\Desktop\\Nueva carpeta\\datos-personales-backend-net\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Estudiantes\\Documents\\datos-personales-backend-net\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F56948A-4DB5-4179-BC54-DEEBF627901C}|Domain\\Domain.csproj|c:\\users\\estudiantes\\documents\\datos-personales-backend-net\\domain\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F56948A-4DB5-4179-BC54-DEEBF627901C}|Domain\\Domain.csproj|solutionrelative:domain\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GlobalUsings.cs",
+              "DocumentMoniker": "C:\\Users\\Estudiantes\\Documents\\datos-personales-backend-net\\Domain\\GlobalUsings.cs",
+              "RelativeDocumentMoniker": "Domain\\GlobalUsings.cs",
+              "ToolTip": "C:\\Users\\Estudiantes\\Documents\\datos-personales-backend-net\\Domain\\GlobalUsings.cs",
+              "RelativeToolTip": "Domain\\GlobalUsings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T00:37:24.532Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
