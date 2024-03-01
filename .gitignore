@@ -35,6 +35,15 @@ bld/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
+.idea/
+Api/obj
+Api/bin
+Application/obj
+Application/bin
+Domain/obj
+Domain/bin
+Infrastructure/obj
+Infrastructure/bin
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
