@@ -15,10 +15,8 @@ namespace Application.UseCases.PersonalInformations.Commands.DeletePersonalInfor
         public async Task<Response<Unit>> Handle(DeletePersonalInformationCommand request, CancellationToken cancellationToken)
         {
             var personalSearched = await _service.GetByIdSupplier(request.Id);
-            if (personalSearched != null)
-            {
-                throw new Exception();
-            }
+            _ = personalSearched ?? throw new Exception();
+            
             await _service.DeleteSupplier(personalSearched);
             var response = new Response<Unit>();
             return response;
