@@ -2,72 +2,72 @@ namespace Domain.Entities;
 
 public class PersonalInformation : EntityBase<string>
 {
-    public string DocumentType { get; set; }
-    public string Document { get; set; }
-    public string FirstName { get; set; }
-    public string SecondName { get; set; }
-    public string LastName { get; set; }
-    public string SecondLastName { get; set; }
-    public DateTime Birthdate { get; set; }
-    public string Sex { get; set; }
+    public string tipoDocumento { get; set; }
+    public string documento { get; set; }
+    public string nombre1 { get; set; }
+    public string nombre2 { get; set; }
+    public string apellido1 { get; set; }
+    public string apellido2 { get; set; }
+    public DateTime fechaNacimiento { get; set; }
+    public string sexo { get; set; }
 
     public PersonalInformation(
-        string documentType,
-        string document,
-        string firstName,
-        string secondName,
-        string lastName,
-        string secondLastName,
-        DateTime birthdate,
-        string sex)
+        string tipoDocumento,
+        string documento,
+        string nombre1,
+        string nombre2,
+        string apellido1,
+        string apellido2,
+        DateTime fechaCumpleaños,
+        string sex0)
     {
-        DocumentType = documentType;
-        Document = document;
-        FirstName = firstName;
-        SecondName = secondName;
-        LastName = lastName;
-        SecondLastName = secondLastName;
-        Birthdate = birthdate;
-        Sex = sex;
+       this.tipoDocumento = tipoDocumento;
+        this.documento = documento;
+        this.nombre1 = nombre1;
+        this.nombre2 = nombre2;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.fechaNacimiento = fechaCumpleaños;
+        this.sexo = sexo;
     }
 
     public void Update(
-        string documentType,
-        string document,
-        string firstName,
-        string secondName,
-        string lastName,
-        string secondLastName
+        string tipoDocumento,
+        string documento,
+        string nombre1,
+        string nombre2,
+        string apellido1,
+        string apellido2
     )
     {
-        if (documentType != string.Empty && !(documentType).Equals(DocumentType))
+        if (tipoDocumento != string.Empty && !(tipoDocumento).Equals(this.tipoDocumento))
         {
-            DocumentType = documentType;
+            this.tipoDocumento = tipoDocumento;
         }
 
-        if (document != string.Empty && !(document).Equals(Document))
+        if (documento != string.Empty && !(documento).Equals(this.documento))
         {
-            Document = document;
+            this.documento = documento;
         }
 
-        if (firstName != string.Empty && !(firstName).Equals(FirstName))
+        if (nombre1 != string.Empty && !(nombre1).Equals(this.nombre1))
         {
-            FirstName = firstName;
+            this.nombre1 = nombre1;
         }
 
-        if (secondName != string.Empty && !(secondName).Equals(SecondName))
+        if (nombre2 != string.Empty && !(nombre2).Equals(this.nombre2))
         {
-            SecondName = secondName;
+            this.nombre2 = nombre2;
         }
 
-        if (lastName != string.Empty && !(lastName).Equals(LastName))
+        if (apellido1 != string.Empty && !(apellido1).Equals(this.apellido1))
         {
-            LastName = lastName;
+            this.apellido1 = apellido1;
         }
 
-        if (secondLastName != string.Empty && !(secondLastName).Equals(SecondLastName))
+        if (apellido2 != string.Empty && !(apellido2).Equals(this.apellido2))
         {
-            SecondLastName = secondLastName;
+            this.apellido2 = apellido2;
         }
     }
 }
