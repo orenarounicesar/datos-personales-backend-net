@@ -37,7 +37,7 @@ public class PersonalInformationController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     // public async Task<IActionResult> Delete(string id) => Ok(await _mediator.Send(new DeletePersonalInformationCommand(id)));
 
-
+    //metodo put
     [HttpPut("{id}")]
   
     public async Task<IActionResult> Update(UpdatePersonalCommand command, string id)
