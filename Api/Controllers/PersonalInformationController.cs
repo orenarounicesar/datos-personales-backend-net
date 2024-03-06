@@ -1,3 +1,4 @@
+using Application.UseCases.PersonalInformations.Commands.CreatePersonalInformation;
 using Domain.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -15,7 +16,14 @@ public class PersonalInformationController : ControllerBase
 
     public PersonalInformationController(IMediator mediator) => _mediator = mediator;
 
-
+    [HttpPost]
+    [Authorize]
+    [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(Response<string>))]
+    [SwaggerResponseExample(StatusCodes.Status200OK, typeof(StatusCodes))]
+    [ProducesResponseType(typeof(Response<string>), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(Response<string>), StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<IActionResult> Create(CreatePersonalInformationCommand command) => Ok(await _mediator.Send(command));
 
 
 
@@ -26,7 +34,7 @@ public class PersonalInformationController : ControllerBase
     [ProducesResponseType(typeof(Response<string>), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(Response<string>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IActionResult> Delete(string id) => Ok(await _mediator.Send(new DeletePersonalInformationCommand(id)));
+   // public async Task<IActionResult> Delete(string id) => Ok(await _mediator.Send(new DeletePersonalInformationCommand(id)));
 
 
 }
