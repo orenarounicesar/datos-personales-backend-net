@@ -30,4 +30,44 @@ public class PersonalInformation : EntityBase<string>
         Birthdate = birthdate;
         Sex = sex;
     }
+
+    public void Update(
+        string documentType,
+        string document,
+        string firstName,
+        string secondName,
+        string lastName,
+        string secondLastName
+    )
+    {
+        if (documentType != string.Empty && !(documentType).Equals(DocumentType))
+        {
+            DocumentType = documentType;
+        }
+
+        if (document != string.Empty && !(document).Equals(Document))
+        {
+            Document = document;
+        }
+
+        if (firstName != string.Empty && !(firstName).Equals(FirstName))
+        {
+            FirstName = firstName;
+        }
+
+        if (secondName != string.Empty && !(secondName).Equals(SecondName))
+        {
+            SecondName = secondName;
+        }
+
+        if (lastName != string.Empty && !(lastName).Equals(LastName))
+        {
+            LastName = lastName;
+        }
+
+        if (secondLastName != string.Empty && !(secondLastName).Equals(SecondLastName))
+        {
+            SecondLastName = secondLastName;
+        }
+    }
 }
