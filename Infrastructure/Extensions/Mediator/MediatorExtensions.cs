@@ -8,7 +8,7 @@ public static class MediatorExtensions
 {
     public static IServiceCollection AddMediator(this IServiceCollection services)
     {
-        services.AddMediatR(Assembly.Load(ApiConstants.ApplicationProject),Assembly.GetExecutingAssembly());
+        services.AddMediatR(Assembly.Load(ApiConstants.ApplicationProject));
 
         return services;
     }

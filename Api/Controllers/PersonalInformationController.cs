@@ -18,7 +18,6 @@ public class PersonalInformationController : ControllerBase
     public PersonalInformationController(IMediator mediator) => _mediator = mediator;
 
     [HttpPost]
-    [Authorize]
     [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(Response<string>))]
     [SwaggerResponseExample(StatusCodes.Status200OK, typeof(StatusCodes))]
     [ProducesResponseType(typeof(Response<string>), StatusCodes.Status400BadRequest)]
@@ -29,7 +28,6 @@ public class PersonalInformationController : ControllerBase
 
 
     [HttpDelete("{id}")]
-    [Authorize]
     [SwaggerResponseExample(StatusCodes.Status400BadRequest, typeof(Response<string>))]
     [SwaggerResponseExample(StatusCodes.Status200OK, typeof(StatusCodes))]
     [ProducesResponseType(typeof(Response<string>), StatusCodes.Status404NotFound)]

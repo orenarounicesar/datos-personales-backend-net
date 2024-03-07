@@ -4,7 +4,7 @@ using Domain.Entities;
 
 namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInformation
 {
-    public class CreatePersonalInformationCommandHandler
+    public class CreatePersonalInformationCommandHandler : IRequestHandler<CreatePersonalInformationCommand, PersonalInformation>
     {
         private readonly PersonalInformationService _service;
 
@@ -13,9 +13,9 @@ namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInfor
             _service = service ?? throw new ArgumentNullException(nameof(service));
         }
 
-        public async Task<Unit> Handle(CreatePersonalInformationCommand request, CancellationToken cancellationToken)
+        
+        public async Task<PersonalInformation> Handle(CreatePersonalInformationCommand request, CancellationToken cancellationToken)
         {
-
             var personalInformation = new PersonalInformation
             (
                 request.tipoDocumento,
@@ -27,15 +27,11 @@ namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInfor
                 request.fechaNacimiento,
                 request.sexo
             );
-            
-            //if (supplierSearcherd.Any())
-            //{
-            //    throw new EntityExistingException($"Este Nit: {request.Nit} Ya esta registrado");
-            //}
+
 
             await _service.CreatePersonalInformation(personalInformation);
 
-            return Unit.Value;
+            return personalInformation;
         }
     }
 }
