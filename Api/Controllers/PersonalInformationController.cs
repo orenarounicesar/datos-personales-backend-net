@@ -1,4 +1,5 @@
 using Application.UseCases.PersonalInformations.Commands.CreatePersonalInformation;
+using Application.UseCases.PersonalInformations.Commands.DeletePersonalInformation;
 using Application.UseCases.PersonalInformations.Commands.UpdatePersonalInformation;
 using Domain.Exceptions;
 using MediatR;
@@ -35,7 +36,7 @@ public class PersonalInformationController : ControllerBase
     [ProducesResponseType(typeof(Response<string>), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(Response<string>), StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    // public async Task<IActionResult> Delete(string id) => Ok(await _mediator.Send(new DeletePersonalInformationCommand(id)));
+    public async Task<IActionResult> Delete(string id) => Ok(await _mediator.Send(new DeletePersonalInformationCommand(id)));
 
     //metodo put
     [HttpPut("{id}")]

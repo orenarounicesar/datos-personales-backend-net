@@ -55,16 +55,10 @@ public class GenericRepository<E> : IGenericRepository<E> where E : EntityBase<s
         await _collection.ReplaceOneAsync(filter, entity);
     }
 
-    public async Task Delete(E entity)
+    public async Task Delete(string id)
     {
-        if (entity.DeletionDate != null)
-        {
-            throw new CoreBusinessException("Entidad no encontrada");
-        }
-
-        entity.SetDeletionDate();
         var filter = Builders<E>.Filter.And(
-            Builders<E>.Filter.Eq(e => e.Id, entity.Id),
+            Builders<E>.Filter.Eq(e => e.Id, id),
             Builders<E>.Filter.Eq(e => e.DeletionDate, null)
         );
         var update = Builders<E>.Update.Set("DeletionDate", DateTime.UtcNow);

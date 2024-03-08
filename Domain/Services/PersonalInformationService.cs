@@ -18,9 +18,9 @@ public class PersonalInformationService
         await _personalInformationRepository.Add(personalInformation);
     }
 
-    public async Task DeletePersonalInformation(PersonalInformation personalInformation)
+    public async Task DeletePersonalInformation(string Id)
     {
-        await _personalInformationRepository.Delete(personalInformation);
+        await _personalInformationRepository.Delete(Id);
     }
 
     public async Task<PersonalInformation> GetPersonalInformationById(string personalInformationId)
