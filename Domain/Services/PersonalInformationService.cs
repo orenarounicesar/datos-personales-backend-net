@@ -35,17 +35,10 @@ public class PersonalInformationService
 
     public async Task UpdatePersonalInformation
     (
-        string personalInformationId,
-        string documentType,
-        string document,
-        string firstName,
-        string secondName,
-        string lastName,
-        string secondLastName
+        PersonalInformation personal
     )
     {
-        var personalInformationSearched = await _personalInformationRepository.GetById(personalInformationId);
-        personalInformationSearched.Update(documentType, document, firstName, secondName, lastName, secondLastName);
-        await _personalInformationRepository.Update(personalInformationSearched);
+
+        await _personalInformationRepository.Update(personal);
     }
 }
