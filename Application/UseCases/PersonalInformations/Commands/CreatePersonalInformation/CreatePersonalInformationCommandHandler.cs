@@ -1,10 +1,11 @@
 ﻿
 using Domain.Services;
 using Domain.Entities;
+using Domain.Exceptions;
 
 namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInformation
 {
-    public class CreatePersonalInformationCommandHandler
+    public class CreatePersonalInformationCommandHandler : IRequestHandler<CreatePersonalInformationCommand, Response<PersonalInformation>>
     {
         private readonly PersonalInformationService _service;
 
@@ -13,9 +14,9 @@ namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInfor
             _service = service ?? throw new ArgumentNullException(nameof(service));
         }
 
-        public async Task<Unit> Handle(CreatePersonalInformationCommand request, CancellationToken cancellationToken)
-        {
 
+      public async  Task<Response<PersonalInformation>> Handle(CreatePersonalInformationCommand request, CancellationToken cancellationToken)
+        {
             var personalInformation = new PersonalInformation
             (
                 request.tipoDocumento,
@@ -27,7 +28,7 @@ namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInfor
                 request.fechaNacimiento,
                 request.sexo
             );
-            
+
             //if (supplierSearcherd.Any())
             //{
             //    throw new EntityExistingException($"Este Nit: {request.Nit} Ya esta registrado");
@@ -35,7 +36,7 @@ namespace Application.UseCases.PersonalInformations.Commands.CreatePersonalInfor
 
             await _service.CreatePersonalInformation(personalInformation);
 
-            return Unit.Value;
+            return new Response<PersonalInformation>(personalInformation);
         }
     }
 }
