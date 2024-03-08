@@ -58,11 +58,10 @@ public class GenericRepository<E> : IGenericRepository<E> where E : EntityBase<s
     public async Task Delete(string id)
     {
         var filter = Builders<E>.Filter.And(
-            Builders<E>.Filter.Eq(e => e.Id, id),
-            Builders<E>.Filter.Eq(e => e.DeletionDate, null)
+            Builders<E>.Filter.Eq(e => e.Id, id)
         );
-        var update = Builders<E>.Update.Set("DeletionDate", DateTime.UtcNow);
-        await _collection.UpdateOneAsync(filter, update);
+       
+        await _collection.DeleteOneAsync(filter);
     }
 
     public async Task<bool> Exist(string id)

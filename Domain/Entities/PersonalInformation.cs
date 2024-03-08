@@ -32,7 +32,6 @@ public class PersonalInformation : EntityBase<string>
     }
 
     public void Update(
-        string tipoDocumento,
         string documento,
         string nombre1,
         string nombre2,
@@ -40,10 +39,7 @@ public class PersonalInformation : EntityBase<string>
         string apellido2
     )
     {
-        if (tipoDocumento != string.Empty && !(tipoDocumento).Equals(this.tipoDocumento))
-        {
-            this.tipoDocumento = tipoDocumento;
-        }
+      
 
         if (documento != string.Empty && !(documento).Equals(this.documento))
         {
