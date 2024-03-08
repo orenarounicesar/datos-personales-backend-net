@@ -11,7 +11,7 @@ namespace Domain.Ports
         Task<IEnumerable<E>> FindAsync(Expression<Func<E, bool>> filter);
         Task Add(E entity);
         Task Update(E entity);
-        Task Delete(E entity);
+        Task Delete(string id);
         Task<bool> Exist(string id);
     }
 }
