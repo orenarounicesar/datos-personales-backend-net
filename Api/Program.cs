@@ -5,6 +5,7 @@ var config = builder.Configuration;
 
 // Add services to the container.
 
+DotNetEnv.Env.Load();
 builder.Services.AddInfrastructure(config);
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
