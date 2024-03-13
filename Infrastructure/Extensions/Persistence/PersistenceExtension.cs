@@ -12,9 +12,9 @@ public static class PersistenceExtension
     {
         services.AddSingleton<IMongoDatabase>((sp) =>
         {
-            
-            var client = new MongoClient(config.GetConnectionString("database"));
-            return client.GetDatabase(config.GetConnectionString("databaseName"));
+
+            var client = new MongoClient((System.Environment.GetEnvironmentVariable("DATABASE")));
+            return client.GetDatabase(System.Environment.GetEnvironmentVariable("DATABASENAME"));
             
         });
 
