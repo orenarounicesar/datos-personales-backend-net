@@ -17,7 +17,15 @@ namespace Application.UseCases.PersonalInformations.Commands.UpdatePersonalInfor
         {
             var personalSearched = await personalInformationService.GetPersonalInformationById(request.Id);
             _ = personalSearched ?? throw new ArgumentNullException(nameof(personalSearched));
-            personalSearched.Update(request.Document, request.FirstName, request.SecondName, request.LastName, request.SecondLastName);
+            personalSearched.tipoDocumento = request.tipoDocumento;
+            personalSearched.fechaNacimiento = request.fechaNacimiento;
+            personalSearched.nombre1 = request.nombre1;
+            personalSearched.nombre2 = request.nombre2;
+            personalSearched.apellido1 = request.apellido1;
+            personalSearched.apellido2 = request.apellido2;
+            personalSearched.sexo = request.sexo;
+            personalSearched.documento = request.documento;
+
             await personalInformationService.UpdatePersonalInformation(personalSearched);
             var response = new Response<string>(personalSearched.Id);
             return response;

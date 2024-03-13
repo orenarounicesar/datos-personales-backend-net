@@ -2,6 +2,6 @@
 
 namespace Application.UseCases.PersonalInformations.Commands.UpdatePersonalInformation
 {
-    public record UpdatePersonalCommand(string Id, string Document, string FirstName, string SecondName, string LastName, string SecondLastName, DateTime BirthDate,
-        string Sex) : IRequest<Response<string>>;
+    public record UpdatePersonalCommand(string Id, string tipoDocumento, string documento, string nombre1,
+        string nombre2, string apellido1, string apellido2, DateTime fechaNacimiento, string sexo) : IRequest<Response<string>>;
 }
