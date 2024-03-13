@@ -19,7 +19,7 @@ public class PersonalInformation : EntityBase<string>
         string apellido1,
         string apellido2,
         DateTime fechaCumpleaños,
-        string sex0)
+        string sexo)
     {
        this.tipoDocumento = tipoDocumento;
         this.documento = documento;
