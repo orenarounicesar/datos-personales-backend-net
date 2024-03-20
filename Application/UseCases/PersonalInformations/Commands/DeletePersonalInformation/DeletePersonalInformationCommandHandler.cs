@@ -1,4 +1,5 @@
-﻿using Domain.Exceptions;
+﻿using Application.Common.Exceptions;
+using Domain.Exceptions;
 using Domain.Services;
 
 namespace Application.UseCases.PersonalInformations.Commands.DeletePersonalInformation
@@ -18,6 +19,10 @@ namespace Application.UseCases.PersonalInformations.Commands.DeletePersonalInfor
             {
                 throw new ArgumentNullException(nameof(request));
             }
+
+            var personalSearched = await personalInformationService.GetPersonalInformationById(request.Id);
+            _ = personalSearched ?? throw new CustomException("Error al borrar");
+
             await personalInformationService.DeletePersonalInformation(request.Id);
             var response = new Response<string>("Se elimino correctamente");
             return response;
